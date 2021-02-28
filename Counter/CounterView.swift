@@ -11,12 +11,6 @@ class CounterView: UIView {
     
     var counter = 1
     
-//    lazy var contentView: UIView = {
-//        let view = UIView()
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        return view
-//    }()
-    
     lazy var totalPriceLabel: UILabel = {
         let label = UILabel()
         label.text = "\(2350 * counter) KZT"
@@ -101,7 +95,6 @@ class CounterView: UIView {
         if counter < 50 {
             counter += 1
         }
-        print("pressed plust")
         DispatchQueue.main.async(execute: { [self] in
             counterLabel.text = "\(counter)"
             totalPriceLabel.text = "\(2350 * counter) KZT"
@@ -119,8 +112,4 @@ class CounterView: UIView {
             totalPriceLabel.text = "\(2350 * counter) KZT"
         })
     }
-    
-//    override class var requiresConstraintBasedLayout: Bool {
-//      return true
-//    }
 }
