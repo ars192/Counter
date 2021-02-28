@@ -95,21 +95,19 @@ class CounterView: UIView {
         if counter < 50 {
             counter += 1
         }
-        DispatchQueue.main.async(execute: { [self] in
             counterLabel.text = "\(counter)"
             totalPriceLabel.text = "\(2350 * counter) KZT"
-        })
         
     }
     
     @objc func decreaseItemCount( _ sender: UIButton!) {
         if counter > 0 {
             counter -= 1
+        } else {
+            removeFromSuperview()
         }
         
-        DispatchQueue.main.async(execute: { [self] in
-            counterLabel.text = "\(counter)"
-            totalPriceLabel.text = "\(2350 * counter) KZT"
-        })
+        counterLabel.text = "\(counter)"
+        totalPriceLabel.text = "\(2350 * counter) KZT"
     }
 }
